@@ -1,8 +1,8 @@
 {
   "name": "currency_converter",
   "version": "0.1.0",
-  "private": true,
   "homepage":"https://vov44er.github.io/currency__converter/",
+  "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.2",
