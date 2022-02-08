@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import CurrencyRow from './components/CurrencyRow';
 
+import './App.scss';
+
 import { getCurrency } from './api/api';
 
 const App = () => {
@@ -42,21 +44,23 @@ const App = () => {
 
   return (
     <div className='App'>
-    {Currency && <Header currency={Currency} />}
-    <CurrencyRow
-      selected={fromCurrency}
-      onChangeCurrency={e => setFromCurrency(e.target.value)}
-      onChangeAmount={handleFromAmountChange}
-      amount={fromAmount}
-    />
-    <div className='equals'>=</div>
-    <CurrencyRow
-      selected={toCurrency}
-      onChangeCurrency={e => setToCurrency(e.target.value)}
-      onChangeAmount={handleToAmountChange}
-      amount={toAmount}
-    />
-  </div>
+    {Currency && <Header currency={Currency} choosen={fromCurrency} />}
+    <div className='App__currency'>
+      <CurrencyRow
+        selected={fromCurrency}
+        onChangeCurrency={e => setFromCurrency(e.target.value)}
+        onChangeAmount={handleFromAmountChange}
+        amount={fromAmount}
+      />
+      <div className='equals'>=</div>
+      <CurrencyRow
+        selected={toCurrency}
+        onChangeCurrency={e => setToCurrency(e.target.value)}
+        onChangeAmount={handleToAmountChange}
+        amount={toAmount}
+      />
+      </div>
+    </div>
   )
 };
 

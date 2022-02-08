@@ -7,7 +7,13 @@ export default function Converter({ selected, onChangeCurrency, onChangeAmount, 
 
   return (
     <div className="converter">
-      <input className="input" type="text" placeholder="Text input" value={amount} onChange={onChangeAmount} />
+      <input
+        className="input"
+        type="number"
+        placeholder="Amount"
+        value={amount}
+        onChange={onChangeAmount}
+      />
         <div className="select">
           <select value={selected} onChange={onChangeCurrency}>
             <option value={'USD'}>USD</option>
